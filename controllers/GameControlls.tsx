@@ -22,7 +22,7 @@ function GameControls({ checkSolution, resetBoard, solvePuzzle, getHint }: GameC
       </button>
       <button
         onClick={solvePuzzle}
-        className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+        className="px-4 py-2 bg-green-500 hover:bg-green-600 text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
       >
         Solve Puzzle
       </button>

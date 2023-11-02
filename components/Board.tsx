@@ -348,7 +348,7 @@ function Board({ difficulty }: { difficulty: Difficulty; }) {
     setSelectedCell(null);
     setIsSolved(false);
     setTime(0);
-    setCurrentTime(formatTime(0));
+    setCurrentTime(formatTime(time));
   }
 
 
@@ -358,7 +358,7 @@ function Board({ difficulty }: { difficulty: Difficulty; }) {
       setBoard(solvedBoard);
       setIsSolved(true);
       setTime(0);
-      setCurrentTime(formatTime(0));
+      setCurrentTime(formatTime(time));
     } else {
       alert("No solution exists for the given Sudoku puzzle.");
     }
@@ -430,7 +430,7 @@ function Board({ difficulty }: { difficulty: Difficulty; }) {
 
   return (
     <div className=' container mx-auto p-4'>
-       <h1 className="text-3xl font-semibold mb-4 text-center text-black">Shega Sudoku Game</h1>
+             <h1 className="text-3xl font-semibold mb-4 text-center text-black">Shega Sudoku Game</h1>
       {board.map((row, rowIndex) => (
         <div key={rowIndex}>
           {row.map((cellValue, colIndex) => {
@@ -468,9 +468,11 @@ function Board({ difficulty }: { difficulty: Difficulty; }) {
      <div className="number-buttons">
         {numberButtons.map((number) => (
           <button
+          
             key={number}
-            className={`number-button${selectedNumber === number ? ' selected' : ''}`}
-            onClick={() => setSelectedNumber(selectedNumber === number ? null : number)} // Set selected number
+            className={`number-button ${selectedNumber === number ? ' selected' : ''}`}
+            onClick={() => setSelectedNumber(selectedNumber === number ? null : number)}
+             // Set selected number
           >
             {number}
           </button>

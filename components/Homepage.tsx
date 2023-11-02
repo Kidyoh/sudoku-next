@@ -36,8 +36,11 @@ function HomePage() {
   }
 
   return (
+    
     <div className="flex items-center justify-center bg-gray-100 mx-auto">
+      
       <div className="flex items-center justify-center p-12 rounded-lg shadow-md">
+
         {selectedDifficulty === null ? (
           <div>
             <h1 className="text-3xl font-semibold mb-4 text-black">Select a difficulty:</h1>
@@ -64,10 +67,12 @@ function HomePage() {
           </div>
         ) : (
           <>
-          
-            <Board difficulty={selectedDifficulty} />
+          <div className='text-center'>
+            <Board difficulty={selectedDifficulty}  />
+           
+            </div>
             {animationVisible && (
-              <div ref={animationContainer} style={{ width: '200px', height: '200px' }}></div>
+              <div ref={animationContainer} style={{ width: '150px', height: '200px' }}></div>
             )}
           </>
         )}
